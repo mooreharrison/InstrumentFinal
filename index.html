@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Instrument Store</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="instruments-app">
+	<div class="popUp hide" v-class="{hide: isHidden}" v-on:click="{hide:isHidden}"></div>
+	<div>
+		<button v-on:click="submit">Add new instrument</button>
+	</div>
+	<cart></cart>
+	<instrument v-for="(item, index) in storeArray" v-bind:name="item.name" v-bind:img="item.img" v-bind:type="item.type" v-bind:price="item.price" v-bind:brand="item.brand" v-bind:hidden="item.hidden" class="product"></instrument>
+	<div></div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
